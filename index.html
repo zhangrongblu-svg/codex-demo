@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>贪吃蛇小游戏</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="game-shell">
+      <section class="hero" aria-labelledby="game-title">
+        <p class="eyebrow">经典街机 · 现代网页</p>
+        <h1 id="game-title">贪吃蛇小游戏</h1>
+        <p class="intro">用方向键或 WASD 控制小蛇吃掉苹果，越吃越长。避开墙壁和自己的身体，挑战更高分！</p>
+      </section>
+
+      <section class="scoreboard" aria-label="游戏状态">
+        <div class="stat-card">
+          <span>当前得分</span>
+          <strong id="score">0</strong>
+        </div>
+        <div class="stat-card">
+          <span>最高得分</span>
+          <strong id="best-score">0</strong>
+        </div>
+        <div class="stat-card">
+          <span>速度</span>
+          <strong id="speed-label">普通</strong>
+        </div>
+      </section>
+
+      <section class="board-panel">
+        <canvas id="game-board" width="480" height="480" aria-label="贪吃蛇游戏画布"></canvas>
+        <div class="overlay" id="message-panel">
+          <h2 id="message-title">准备开始</h2>
+          <p id="message-text">点击“开始游戏”或按空格键开始。</p>
+        </div>
+      </section>
+
+      <section class="controls" aria-label="游戏控制">
+        <button id="start-button" type="button">开始游戏</button>
+        <button id="pause-button" type="button" disabled>暂停</button>
+        <button id="reset-button" type="button">重新开始</button>
+      </section>
+
+      <section class="touch-controls" aria-label="触屏方向控制">
+        <button class="direction-button up" data-direction="up" aria-label="向上">▲</button>
+        <button class="direction-button left" data-direction="left" aria-label="向左">◀</button>
+        <button class="direction-button right" data-direction="right" aria-label="向右">▶</button>
+        <button class="direction-button down" data-direction="down" aria-label="向下">▼</button>
+      </section>
+
+      <section class="help">
+        <h2>玩法说明</h2>
+        <ul>
+          <li>键盘：方向键 / WASD 控制方向，空格键开始或暂停。</li>
+          <li>手机：使用下方方向按钮控制移动。</li>
+          <li>每吃到一个苹果加 10 分，速度会随分数逐渐提升。</li>
+        </ul>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
