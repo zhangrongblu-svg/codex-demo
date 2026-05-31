@@ -3,62 +3,227 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>贪吃蛇小游戏</title>
+    <meta
+      name="description"
+      content="North American editorial photography portfolio for commercial portraits, spaces, still life, and visual stories."
+    />
+    <title>Lin Avery Photography — Editorial Commercial Portfolio</title>
+    <link rel="preconnect" href="https://images.unsplash.com" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <main class="game-shell">
-      <section class="hero" aria-labelledby="game-title">
-        <p class="eyebrow">经典街机 · 现代网页</p>
-        <h1 id="game-title">贪吃蛇小游戏</h1>
-        <p class="intro">用方向键或 WASD 控制小蛇吃掉苹果，越吃越长。避开墙壁和自己的身体，挑战更高分！</p>
-      </section>
+    <header class="site-header" aria-label="主导航">
+      <a class="brand" href="#home" aria-label="回到首页">Lin Avery</a>
+      <nav class="nav-links" aria-label="页面导航">
+        <a href="#work">Work</a>
+        <a href="#stories">Stories</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
 
-      <section class="scoreboard" aria-label="游戏状态">
-        <div class="stat-card">
-          <span>当前得分</span>
-          <strong id="score">0</strong>
+    <main id="home">
+      <section class="hero" aria-labelledby="hero-title">
+        <figure class="hero-media">
+          <img
+            src="https://images.unsplash.com/photo-1496440737103-cd596325d314?auto=format&fit=crop&w=2400&q=88"
+            alt="黑白电影感人像，人物在窗边侧身凝视"
+          />
+        </figure>
+        <div class="hero-copy">
+          <p class="section-kicker">Commercial / Editorial / Portrait</p>
+          <h1 id="hero-title">Quiet images for brands, people, and places with atmosphere.</h1>
         </div>
-        <div class="stat-card">
-          <span>最高得分</span>
-          <strong id="best-score">0</strong>
+        <a class="scroll-cue" href="#work" aria-label="滚动查看作品">Scroll</a>
+      </section>
+
+      <section class="design-brief reveal" aria-labelledby="brief-title">
+        <div>
+          <p class="section-kicker">01 / Information Architecture</p>
+          <h2 id="brief-title">网站信息架构</h2>
         </div>
-        <div class="stat-card">
-          <span>速度</span>
-          <strong id="speed-label">普通</strong>
+        <div class="brief-grid">
+          <article>
+            <span>Home</span>
+            <p>全屏封面先建立情绪，只保留一句定位、导航与向下引导。</p>
+          </article>
+          <article>
+            <span>Work</span>
+            <p>精选项目 + 瀑布流混排，支持从单张照片进入完整项目故事。</p>
+          </article>
+          <article>
+            <span>Stories</span>
+            <p>项目叙事页承载客户、地点、年份、简短背景与精选图集。</p>
+          </article>
+          <article>
+            <span>About / Contact</span>
+            <p>克制介绍服务范围、城市、合作方式与极简联系入口。</p>
+          </article>
         </div>
       </section>
 
-      <section class="board-panel">
-        <canvas id="game-board" width="480" height="480" aria-label="贪吃蛇游戏画布"></canvas>
-        <div class="overlay" id="message-panel">
-          <h2 id="message-title">准备开始</h2>
-          <p id="message-text">点击“开始游戏”或按空格键开始。</p>
+      <section class="wireframes reveal" aria-labelledby="wire-title">
+        <div class="section-heading">
+          <p class="section-kicker">02 / Wireframes</p>
+          <h2 id="wire-title">页面线框图</h2>
+        </div>
+        <div class="wire-grid" aria-label="页面线框图示意">
+          <article class="wire-card">
+            <h3>Home</h3>
+            <div class="wire-frame home-wire">
+              <span></span><span></span><span></span>
+            </div>
+            <p>全屏摄影封面 / 顶部极简导航 / 左下短句。</p>
+          </article>
+          <article class="wire-card">
+            <h3>Work</h3>
+            <div class="wire-frame work-wire">
+              <span></span><span></span><span></span><span></span><span></span>
+            </div>
+            <p>项目卡片与瀑布流同屏出现，保持编辑部版面节奏。</p>
+          </article>
+          <article class="wire-card">
+            <h3>Project Story</h3>
+            <div class="wire-frame story-wire">
+              <span></span><span></span><span></span><span></span>
+            </div>
+            <p>点击项目后进入沉浸故事层：大图、项目说明、图集。</p>
+          </article>
         </div>
       </section>
 
-      <section class="controls" aria-label="游戏控制">
-        <button id="start-button" type="button">开始游戏</button>
-        <button id="pause-button" type="button" disabled>暂停</button>
-        <button id="reset-button" type="button">重新开始</button>
+      <section class="style-notes reveal" aria-labelledby="style-title">
+        <p class="section-kicker">03 / Visual Direction</p>
+        <h2 id="style-title">风格说明</h2>
+        <div class="style-columns">
+          <p>
+            以白底、灰白、深黑为主体，加入少量暖砂色作为编辑注脚。排版参考高级品牌目录：大留白、细线、低对比文字、克制动效。
+          </p>
+          <p>
+            图片是第一层叙事，文字退后。动效只用于入场、悬停与项目切换，强调呼吸感，不做炫技式滚动特效。
+          </p>
+        </div>
       </section>
 
-      <section class="touch-controls" aria-label="触屏方向控制">
-        <button class="direction-button up" data-direction="up" aria-label="向上">▲</button>
-        <button class="direction-button left" data-direction="left" aria-label="向左">◀</button>
-        <button class="direction-button right" data-direction="right" aria-label="向右">▶</button>
-        <button class="direction-button down" data-direction="down" aria-label="向下">▼</button>
+      <section class="work-section" id="work" aria-labelledby="work-title">
+        <div class="section-heading reveal">
+          <p class="section-kicker">04 / Selected Work</p>
+          <h2 id="work-title">Images first. Words later.</h2>
+        </div>
+
+        <div class="featured-project reveal">
+          <button class="project-cover" type="button" data-project="atelier-north" aria-label="查看 Atelier North 项目故事">
+            <img
+              src="https://images.unsplash.com/photo-1506629905607-d9f297d85cb4?auto=format&fit=crop&w=1800&q=86"
+              alt="自然光下的室内商业人像"
+            />
+          </button>
+          <div class="project-meta">
+            <p class="section-kicker">Featured Story</p>
+            <h3>Atelier North</h3>
+            <p>
+              A restrained visual study for an independent studio: soft daylight, tactile surfaces, and portraits that feel observed rather than staged.
+            </p>
+            <button class="text-button" type="button" data-project="atelier-north">View project story</button>
+          </div>
+        </div>
+
+        <div class="masonry-gallery" aria-label="作品瀑布流">
+          <button class="masonry-item tall reveal" type="button" data-project="west-end">
+            <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=84" alt="暖色街区中的纪实人像" />
+            <span>West End Notes</span>
+          </button>
+          <button class="masonry-item reveal" type="button" data-project="table-studies">
+            <img src="https://images.unsplash.com/photo-1516594798947-e65505dbb29d?auto=format&fit=crop&w=1200&q=84" alt="极简静物与餐桌细节" />
+            <span>Table Studies</span>
+          </button>
+          <button class="masonry-item wide reveal" type="button" data-project="city-light">
+            <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=1400&q=84" alt="城市窗光中的商业肖像" />
+            <span>City Light</span>
+          </button>
+          <button class="masonry-item reveal" type="button" data-project="atelier-north">
+            <img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=1200&q=84" alt="灰白背景下的现代女性人像" />
+            <span>Atelier North</span>
+          </button>
+          <button class="masonry-item tall reveal" type="button" data-project="west-end">
+            <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=84" alt="北美自然环境中的生活方式摄影" />
+            <span>Field Notes</span>
+          </button>
+        </div>
       </section>
 
-      <section class="help">
-        <h2>玩法说明</h2>
-        <ul>
-          <li>键盘：方向键 / WASD 控制方向，空格键开始或暂停。</li>
-          <li>手机：使用下方方向按钮控制移动。</li>
-          <li>每吃到一个苹果加 10 分，速度会随分数逐渐提升。</li>
-        </ul>
+      <section class="stories-section" id="stories" aria-labelledby="stories-title">
+        <div class="section-heading reveal">
+          <p class="section-kicker">05 / Project Stories</p>
+          <h2 id="stories-title">Built as campaigns, edited as essays.</h2>
+        </div>
+        <div class="story-list">
+          <button class="story-row reveal" type="button" data-project="atelier-north">
+            <span>Atelier North</span>
+            <span>Brand Portraits</span>
+            <span>2026</span>
+          </button>
+          <button class="story-row reveal" type="button" data-project="west-end">
+            <span>West End Notes</span>
+            <span>Travel / Lifestyle</span>
+            <span>2025</span>
+          </button>
+          <button class="story-row reveal" type="button" data-project="table-studies">
+            <span>Table Studies</span>
+            <span>Still Life</span>
+            <span>2025</span>
+          </button>
+          <button class="story-row reveal" type="button" data-project="city-light">
+            <span>City Light</span>
+            <span>Editorial Portraits</span>
+            <span>2024</span>
+          </button>
+        </div>
+      </section>
+
+      <section class="about-section reveal" id="about" aria-labelledby="about-title">
+        <div>
+          <p class="section-kicker">06 / About</p>
+          <h2 id="about-title">North American commercial photography with a quiet editorial tone.</h2>
+        </div>
+        <div class="about-copy">
+          <p>
+            Lin Avery works between Vancouver, Seattle, and New York for founders, cultural brands, hospitality spaces, and publications seeking atmospheric images with restraint.
+          </p>
+          <ul>
+            <li>Commercial portraits</li>
+            <li>Editorial campaigns</li>
+            <li>Hospitality & interiors</li>
+            <li>Still life direction</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="contact-section reveal" id="contact" aria-labelledby="contact-title">
+        <p class="section-kicker">07 / Contact</p>
+        <h2 id="contact-title">Available for select commissions in North America.</h2>
+        <a class="contact-link" href="mailto:studio@linavery.example">studio@linavery.example</a>
       </section>
     </main>
+
+    <dialog class="project-dialog" id="project-dialog" aria-labelledby="dialog-title">
+      <button class="close-dialog" type="button" aria-label="关闭项目故事">×</button>
+      <div class="dialog-grid">
+        <div class="dialog-media">
+          <img id="dialog-image" src="" alt="" />
+        </div>
+        <article class="dialog-copy">
+          <p class="section-kicker" id="dialog-category"></p>
+          <h2 id="dialog-title"></h2>
+          <p id="dialog-description"></p>
+          <dl class="project-facts">
+            <div><dt>Client</dt><dd id="dialog-client"></dd></div>
+            <div><dt>Location</dt><dd id="dialog-location"></dd></div>
+            <div><dt>Year</dt><dd id="dialog-year"></dd></div>
+          </dl>
+        </article>
+      </div>
+    </dialog>
 
     <script src="script.js"></script>
   </body>
